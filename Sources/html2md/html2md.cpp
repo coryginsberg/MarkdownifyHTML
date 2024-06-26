@@ -26,7 +26,7 @@ bool endsWith(const string &str, const string &suffix) {
 
 size_t ReplaceAll(string *haystack, const string &needle,
                   const string &replacement) {
-  // Get first occurrencew
+  // Get first occurrence
   size_t pos = (*haystack).find(needle);
 
   size_t amount_replaced = 0;
@@ -133,6 +133,7 @@ Converter::Converter(string *html, Options *options) : html_(*html) {
   tags_[kTagStrighthrought2] = tagStrighthrought;
 
   tags_[kTagBlockquote] = make_shared<Converter::TagBlockquote>();
+
 }
 
 void Converter::CleanUpMarkdown() {
@@ -179,7 +180,8 @@ Converter *Converter::appendToMd(char ch) {
   return this;
 }
 
-Converter *Converter::appendToMd(const char *str) {
+Converter *Converter::appendToMd(const char *str)
+{
   if (IsInIgnoredTag())
     return this;
 
@@ -208,8 +210,8 @@ Converter *Converter::appendBlank() {
 }
 
 bool Converter::ok() const {
-  return !is_in_pre_ && !is_in_list_ && !is_in_p_ && !is_in_tag_ &&
-         index_blockquote == 0 && index_li == 0;
+  return !is_in_pre_ && !is_in_list_ && !is_in_p_ &&
+         !is_in_tag_ && index_blockquote == 0 && index_li == 0;
 }
 
 void Converter::LTrim(string *s) {
@@ -521,7 +523,8 @@ bool Converter::ParseCharInTagContent(char ch) {
 }
 
 bool Converter::ReplacePreviousSpaceInLineByNewline() {
-  if (current_tag_ == kTagParagraph)
+  if (current_tag_ == kTagParagraph ||
+      (prev_tag_ != kTagCode && prev_tag_ != kTagPre))
     return false;
 
   auto offset = md_.length() - 1;
@@ -825,7 +828,6 @@ void Converter::TagUnorderedList::OnHasLeftOpeningTag(Converter *c) {
 }
 
 void Converter::TagUnorderedList::OnHasLeftClosingTag(Converter *c) {
-
   if (c->index_li != 0)
     --c->index_li;
 

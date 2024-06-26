@@ -27,7 +27,6 @@ public struct MarkdownifyHTML {
     var options = html2md.Options.self.init()
     options.splitLines = false
     options.includeTitle = false
-    options.formatTable = false
     var converter = html2md.Converter(&stdStr, withUnsafeMutablePointer(to: &options) { _ in
       nil // Optional C++ value but pointer declaration is required in Swift
     })

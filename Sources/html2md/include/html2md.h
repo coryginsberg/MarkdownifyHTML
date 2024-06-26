@@ -98,14 +98,6 @@ struct Options {
    */
   bool includeTitle = true;
 
-  /*!
-   * \brief Whetever to format Markdown Tables
-   *
-   * Whetever to format Markdown Tables.
-   * Default is true.
-   */
-  bool formatTable = true;
-
   inline bool operator==(html2md::Options o) const {
     return splitLines == o.splitLines && unorderedList == o.unorderedList &&
            orderedList == o.orderedList && includeTitle == o.includeTitle &&
@@ -298,12 +290,6 @@ private:
   static constexpr const char *kTagHeader5 = "h5";
   static constexpr const char *kTagHeader6 = "h6";
 
-  // Table
-  static constexpr const char *kTagTable = "table";
-  static constexpr const char *kTagTableRow = "tr";
-  static constexpr const char *kTagTableHeader = "th";
-  static constexpr const char *kTagTableData = "td";
-
   size_t index_ch_in_html_ = 0;
 
   bool is_closing_tag_ = false;
@@ -312,17 +298,12 @@ private:
   bool is_in_list_ = false;
   bool is_in_p_ = false;
   bool is_in_pre_ = false;
-  bool is_in_table_ = false;
-  bool is_in_table_row_ = false;
   bool is_in_tag_ = false;
   bool is_self_closing_tag_ = false;
 
   // relevant for <li> only, false = is in unordered list
   bool is_in_ordered_list_ = false;
   uint8_t index_ol = 0;
-
-  // store the table start
-  size_t table_start = 0;
 
   // number of lists
   uint8_t index_li = 0;
@@ -337,9 +318,6 @@ private:
   uint16_t offset_lt_ = 0;
   std::string current_tag_;
   std::string prev_tag_;
-
-  // Line which separates header from data
-  std::string tableLine;
 
   size_t chars_in_curr_line_ = 0;
 
@@ -480,26 +458,6 @@ private:
   };
 
   struct TagSeperator : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagTable : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagTableRow : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagTableHeader : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagTableData : Tag {
     void OnHasLeftOpeningTag(Converter *c) override;
     void OnHasLeftClosingTag(Converter *c) override;
   };
