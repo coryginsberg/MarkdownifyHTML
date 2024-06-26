@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "6E724F4A-A815-4225-A44D-2D1187FFADA9",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-logger"
+      }
+    ],
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MarkdownifyHTMLTests",
+        "name" : "MarkdownifyHTMLTests"
+      }
+    }
+  ],
+  "version" : 1
+}
