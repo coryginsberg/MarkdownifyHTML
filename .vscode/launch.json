@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:MarkdownifyHTML}",
+      "name": "Debug MarkdownifyHTMLCmd",
+      "program": "${workspaceFolder:MarkdownifyHTML}/.build/debug/MarkdownifyHTMLCmd",
+      "preLaunchTask": "swift: Build Debug MarkdownifyHTMLCmd"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:MarkdownifyHTML}",
+      "name": "Release MarkdownifyHTMLCmd",
+      "program": "${workspaceFolder:MarkdownifyHTML}/.build/release/MarkdownifyHTMLCmd",
+      "preLaunchTask": "swift: Build Release MarkdownifyHTMLCmd"
+    }
+  ]
+}
