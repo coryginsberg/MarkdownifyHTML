@@ -344,10 +344,6 @@ private:
 
   std::string ExtractAttributeFromTagLeftOf(const std::string &attr);
 
-  void TurnLineIntoHeader1();
-
-  void TurnLineIntoHeader2();
-
   // Current char: '<'
   void OnHasEnteredTag();
 
@@ -363,16 +359,6 @@ private:
 
   // Current char: '>'
   bool OnHasLeftTag();
-
-  inline static bool TagContainsAttributesToHide(std::string *tag) {
-    using std::string;
-
-    return (*tag).find(" aria=\"hidden\"") != string::npos ||
-           (*tag).find("display:none") != string::npos ||
-           (*tag).find("visibility:hidden") != string::npos ||
-           (*tag).find("opacity:0") != string::npos ||
-           (*tag).find("Details-content--hidden-not-important") != string::npos;
-  }
 
   Converter *ShortenMarkdown(size_t chars = 1);
   inline bool shortIfPrevCh(char prev) {

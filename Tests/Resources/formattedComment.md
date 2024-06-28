@@ -1,575 +1,460 @@
-Opening paragraph, with an ordered list of autumn leaves I found
+Opening paragraph, with a list of autumn leaves I found
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+A big leaf
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+Red
 
+*Orange*
 
-Unordered list of fruits:
+Yellow
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
-
-### Fancy Header Title
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways
+are the best here.
+
 ```
+    <div class=flowchart>... crazy modern shit ...</div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2</a></li>
+          <li>Otherwise return to <a href=#step1>Step 1</a></li>
+        </ol>
+      </li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4</a>.</li>
+        Otherwise proceed to <a href=#step3>Step 3</a>.</li>
+      </li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2</a>.</li>
 
+      ...
+   </ol>
+```
+\
+(or start with the anchors/list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways 
+are the best here.
+
 ```
+<div class=flowchart>... crazy modern shit ...<&#x2F;div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2<&#x2F;a><&#x2F;li>
+          <li>Otherwise return to <a href=#step1>Step 1<&#x2F;a><&#x2F;li>
+        <&#x2F;ol>
+      <&#x2F;li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4<&#x2F;a>.<&#x2F;li>
+        Otherwise proceed to <a href=#step3>Step 3<&#x2F;a>.<&#x2F;li>
+      <&#x2F;li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2<&#x2F;a>.<&#x2F;li>
 
+      ...
+   <&#x2F;ol>
+```
+\
+(or start with the anchors&#x2F;list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways
+are the best here.
+
 ```
+    <div class=flowchart>... crazy modern shit ...</div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2</a></li>
+          <li>Otherwise return to <a href=#step1>Step 1</a></li>
+        </ol>
+      </li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4</a>.</li>
+        Otherwise proceed to <a href=#step3>Step 3</a>.</li>
+      </li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2</a>.</li>
 
+      ...
+   </ol>
+```
+\
+(or start with the anchors/list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways 
+are the best here.
+
 ```
+<div class=flowchart>... crazy modern shit ...<&#x2F;div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2<&#x2F;a><&#x2F;li>
+          <li>Otherwise return to <a href=#step1>Step 1<&#x2F;a><&#x2F;li>
+        <&#x2F;ol>
+      <&#x2F;li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4<&#x2F;a>.<&#x2F;li>
+        Otherwise proceed to <a href=#step3>Step 3<&#x2F;a>.<&#x2F;li>
+      <&#x2F;li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2<&#x2F;a>.<&#x2F;li>
 
+      ...
+   <&#x2F;ol>
+```
+\
+(or start with the anchors&#x2F;list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways
+are the best here.
+
 ```
+    <div class=flowchart>... crazy modern shit ...</div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2</a></li>
+          <li>Otherwise return to <a href=#step1>Step 1</a></li>
+        </ol>
+      </li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4</a>.</li>
+        Otherwise proceed to <a href=#step3>Step 3</a>.</li>
+      </li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2</a>.</li>
 
+      ...
+   </ol>
+```
+\
+(or start with the anchors/list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways 
+are the best here.
+
 ```
+<div class=flowchart>... crazy modern shit ...<&#x2F;div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2<&#x2F;a><&#x2F;li>
+          <li>Otherwise return to <a href=#step1>Step 1<&#x2F;a><&#x2F;li>
+        <&#x2F;ol>
+      <&#x2F;li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4<&#x2F;a>.<&#x2F;li>
+        Otherwise proceed to <a href=#step3>Step 3<&#x2F;a>.<&#x2F;li>
+      <&#x2F;li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2<&#x2F;a>.<&#x2F;li>
 
+      ...
+   <&#x2F;ol>
+```
+\
+(or start with the anchors&#x2F;list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways
+are the best here.
+
 ```
+    <div class=flowchart>... crazy modern shit ...</div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2</a></li>
+          <li>Otherwise return to <a href=#step1>Step 1</a></li>
+        </ol>
+      </li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4</a>.</li>
+        Otherwise proceed to <a href=#step3>Step 3</a>.</li>
+      </li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2</a>.</li>
 
+      ...
+   </ol>
+```
+\
+(or start with the anchors/list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways 
+are the best here.
+
 ```
+<div class=flowchart>... crazy modern shit ...<&#x2F;div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2<&#x2F;a><&#x2F;li>
+          <li>Otherwise return to <a href=#step1>Step 1<&#x2F;a><&#x2F;li>
+        <&#x2F;ol>
+      <&#x2F;li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4<&#x2F;a>.<&#x2F;li>
+        Otherwise proceed to <a href=#step3>Step 3<&#x2F;a>.<&#x2F;li>
+      <&#x2F;li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2<&#x2F;a>.<&#x2F;li>
 
+      ...
+   <&#x2F;ol>
+```
+\
+(or start with the anchors&#x2F;list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways
+are the best here.
+
 ```
+    <div class=flowchart>... crazy modern shit ...</div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2</a></li>
+          <li>Otherwise return to <a href=#step1>Step 1</a></li>
+        </ol>
+      </li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4</a>.</li>
+        Otherwise proceed to <a href=#step3>Step 3</a>.</li>
+      </li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2</a>.</li>
 
+      ...
+   </ol>
+```
+\
+(or start with the anchors/list, and progressively enhance)
+Opening paragraph, with a list of autumn leaves I found
 
-Unordered list of fruits:
+A big leaf
 
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
+Red
 
-### Fancy Header Title
+*Orange*
+
+Yellow
+
+A medium sized leaf that maybe was pancake shaped
 
 Here&#39;s what someone said:
 
-> I think blockquotes are cool
->
+I think blockquotes are dumb
 
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
-
-And then they mentiond code around `NSAttributedString` that looked like this code block:
-
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
-```
-
-Opening paragraph, with an ordered list of autumn leaves I found
-
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
-
-- A medium sized leaf that ~maybe~ was pancake shaped
-
-
-Unordered list of fruits:
-
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
-
-### Fancy Header Title
-
-Here&#39;s what someone said:
-
-> I think blockquotes are cool
->
-
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
+Testing an emphasized link *[](https://hn.ycombinator.com)*, neato!
 
 And then they mentiond code around `NSAttributedString` that looked like this code block:
 
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+I tried a few techniques, in terms of accessibility I think "old" ways 
+are the best here.
+
 ```
+<div class=flowchart>... crazy modern shit ...<&#x2F;div>
 
-Opening paragraph, with an ordered list of autumn leaves I found
+    <ol class=sr-only>
+      <li id=step1> Water on stove.
+        <ol>
+          <li>Boiling? Proceed to <a href=#step2>Step 2<&#x2F;a><&#x2F;li>
+          <li>Otherwise return to <a href=#step1>Step 1<&#x2F;a><&#x2F;li>
+        <&#x2F;ol>
+      <&#x2F;li>
 
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
+      <li id=step2> Cook dumplings in water. Wait a minute.
+        Floating? Proceed to <a href=#step4>Step 4<&#x2F;a>.<&#x2F;li>
+        Otherwise proceed to <a href=#step3>Step 3<&#x2F;a>.<&#x2F;li>
+      <&#x2F;li>
 
-- A medium sized leaf that ~maybe~ was pancake shaped
+      <li id=step3> Stir dumplings. Return to <a href=#step2>Step 2<&#x2F;a>.<&#x2F;li>
 
-
-Unordered list of fruits:
-
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
-
-### Fancy Header Title
-
-Here&#39;s what someone said:
-
-> I think blockquotes are cool
->
-
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
-
-And then they mentiond code around `NSAttributedString` that looked like this code block:
-
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
+      ...
+   <&#x2F;ol>
 ```
-
-Opening paragraph, with an ordered list of autumn leaves I found
-
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
-
-- A medium sized leaf that ~maybe~ was pancake shaped
-
-
-Unordered list of fruits:
-
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
-
-### Fancy Header Title
-
-Here&#39;s what someone said:
-
-> I think blockquotes are cool
->
-
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
-
-And then they mentiond code around `NSAttributedString` that looked like this code block:
-
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
-```
-
-Opening paragraph, with an ordered list of autumn leaves I found
-
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
-
-- A medium sized leaf that ~maybe~ was pancake shaped
-
-
-Unordered list of fruits:
-
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
-
-### Fancy Header Title
-
-Here&#39;s what someone said:
-
-> I think blockquotes are cool
->
-
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
-
-And then they mentiond code around `NSAttributedString` that looked like this code block:
-
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
-```
-
-Opening paragraph, with an ordered list of autumn leaves I found
-
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
-
-- A medium sized leaf that ~maybe~ was pancake shaped
-
-
-Unordered list of fruits:
-
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
-
-### Fancy Header Title
-
-Here&#39;s what someone said:
-
-> I think blockquotes are cool
->
-
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
-
-And then they mentiond code around `NSAttributedString` that looked like this code block:
-
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
-```
-
-Opening paragraph, with an ordered list of autumn leaves I found
-
-1. A big leaf
-2. Some small leaves:
-1. Red (nested)
-2. **Orange**
-3. Yellow
-
-- A medium sized leaf that ~maybe~ was pancake shaped
-
-
-Unordered list of fruits:
-
-- Blueberries
-- Apples- Macintosh
-- Honey crisp
-- Cortland
-- Banana
-
-### Fancy Header Title
-
-Here&#39;s what someone said:
-
-> I think blockquotes are cool
->
-
-Nesting **an *[emphasized link](https://apolloapp.io)* inside strong text**, neato!
-
-And then they mentiond code around `NSAttributedString` that looked like this code block:
-
-```lang-swift
-func yeah() -> NSAttributedString {
-    // TODO: Write code
-}
-```
+\
+(or start with the anchors&#x2F;list, and progressively enhance)

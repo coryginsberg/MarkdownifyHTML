@@ -4,7 +4,7 @@
 #include "html2md.h"
 
 #include <algorithm>
-#include <cstring>
+#include <string>
 #include <memory>
 #include <sstream>
 #include <vector>
@@ -52,8 +52,7 @@ size_t ReplaceAll(string *haystack, const string &needle, const char c) {
 // Split given string by given character delimiter into vector of strings
 vector<string> Split(string const &str, char delimiter) {
   vector<string> result;
-  std::stringstream iss(str);
-
+  std::istringstream iss(str);
   for (string token; getline(iss, token, delimiter);)
     result.push_back(token);
 
@@ -107,6 +106,7 @@ void Converter::CleanUpMarkdown() {
   ReplaceAll(&md_, "\n↵\n", " ↵\n");
   ReplaceAll(&md_, "\n*\n", "\n");
   ReplaceAll(&md_, "\n. ", ".\n");
+  ReplaceAll(&md_, "\\n", "\n");
 
   ReplaceAll(&md_, "&quot;", '"');
   ReplaceAll(&md_, "&lt;", "<");
@@ -207,6 +207,7 @@ void Converter::TidyAllLines(string *str) {
     if (startsWith(line, "```") || startsWith(line, "~~~"))
       in_code_block = !in_code_block;
     if (in_code_block) {
+      ReplaceAll(&line, "&#x2F;", "/");
       res += line + '\n';
       continue;
     }
@@ -220,7 +221,6 @@ void Converter::TidyAllLines(string *str) {
       }
     } else {
       amount_newlines = 0;
-
       res += line + '\n';
     }
   }
@@ -288,18 +288,6 @@ string Converter::ExtractAttributeFromTagLeftOf(const string &attr) {
 
   return tag.substr(offset_opening_quote + 1,
                     offset_closing_quote - 1 - offset_opening_quote);
-}
-
-void Converter::TurnLineIntoHeader1() {
-  appendToMd('\n' + Repeat("=", chars_in_curr_line_) + "\n\n");
-
-  chars_in_curr_line_ = 0;
-}
-
-void Converter::TurnLineIntoHeader2() {
-  appendToMd('\n' + Repeat("-", chars_in_curr_line_) + "\n\n");
-
-  chars_in_curr_line_ = 0;
 }
 
 string Converter::convert() {
@@ -381,10 +369,6 @@ bool Converter::OnHasLeftTag() {
   is_in_tag_ = false;
 
   UpdatePrevChFromMd();
-
-  if (!is_closing_tag_)
-    if (TagContainsAttributesToHide(&current_tag_))
-      return true;
 
   current_tag_ = Split(current_tag_, ' ')[0];
 
