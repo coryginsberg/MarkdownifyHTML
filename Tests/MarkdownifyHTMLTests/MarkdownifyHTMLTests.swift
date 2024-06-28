@@ -2,6 +2,7 @@
 // Copyright (c) 2023 - Present Cory Ginsberg
 // Licensed under Apache License 2.0
 //
+// swiftlint:disable force_unwrapping
 
 import MarkdownifyHTML
 import OSLog
@@ -47,7 +48,7 @@ final class MarkdownifyHTMLTests: XCTestCase {
     }
 
     measure {
-      guard let _ = try? MarkdownifyHTML(testFile).attributedText else {
+      guard (try? MarkdownifyHTML(testFile).attributedText) != nil else {
         XCTFail("Failed to render")
         return
       }
@@ -76,7 +77,10 @@ struct Resource {
     //      - <test case files>
     let testCaseURL = URL(fileURLWithPath: "\(sourceFile)", isDirectory: false)
     let testsFolderURL = testCaseURL.deletingLastPathComponent()
-    let resourcesFolderURL = testsFolderURL.deletingLastPathComponent().appendingPathComponent("Resources", isDirectory: true)
+    let resourcesFolderURL = testsFolderURL.deletingLastPathComponent().appendingPathComponent("Resources",
+                                                                                               isDirectory: true)
     self.url = resourcesFolderURL.appendingPathComponent("\(name).\(type)", isDirectory: false)
   }
 }
+
+// swiftlint:enable force_unwrapping
