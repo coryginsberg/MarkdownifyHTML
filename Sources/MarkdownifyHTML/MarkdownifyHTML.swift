@@ -5,7 +5,7 @@ import CxxStdlib
 import Foundation
 import html2md
 
-@available(macOS 12, *)
+@available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
 public struct MarkdownifyHTML {
   public private(set) var text: String
   public var attributedText: AttributedString {

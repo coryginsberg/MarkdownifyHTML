@@ -8,7 +8,7 @@ import ArgumentParser
 import Foundation
 import MarkdownifyHTML
 
-@available(iOS 16, macOS 13, *)
+@available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
 @main
 struct MarkdownifyHTMLCmd: ParsableCommand {
   @Option(
@@ -24,16 +24,9 @@ struct MarkdownifyHTMLCmd: ParsableCommand {
       guard let input = try? String(contentsOf: file) else {
         throw RuntimeError("Couldn't read from '\(file)'!")
       }
-      var markdownify = ""
-      let clock = ContinuousClock()
-      let measurement = clock.measure {
-        markdownify = MarkdownifyHTML(input).text
-      }
-      print(markdownify)
-      print(measurement)
+      print(MarkdownifyHTML(input).text)
     } else if let text = text { // assume text is filled out
-      let markdownify = MarkdownifyHTML(text).text
-      print(markdownify)
+      print(MarkdownifyHTML(text).text)
     } else {
       print("Error: you must select either `--file` or `--text`")
     }

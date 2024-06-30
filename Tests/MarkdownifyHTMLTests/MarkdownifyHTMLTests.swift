@@ -7,7 +7,7 @@ import MarkdownifyHTML
 import OSLog
 import XCTest
 
-@available(iOS 15, *)
+@available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
 final class MarkdownifyHTMLTests: XCTestCase {
   var testFilePath: Resource?
   var solutionFile: Resource?

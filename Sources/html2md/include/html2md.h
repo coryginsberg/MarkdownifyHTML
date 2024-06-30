@@ -98,6 +98,14 @@ struct Options {
    */
   bool includeTitle = true;
 
+  /*!
+   * \brief Whetever to format Markdown Tables
+   *
+   * Whetever to format Markdown Tables.
+   * Default is true.
+   */
+  bool formatTable = true;
+
   inline bool operator==(html2md::Options o) const {
     return splitLines == o.splitLines && unorderedList == o.unorderedList &&
            orderedList == o.orderedList && includeTitle == o.includeTitle &&
@@ -240,75 +248,23 @@ public:
 private:
   // Attributes
   static constexpr const char *kAttributeHref = "href";
-  static constexpr const char *kAttributeAlt = "alt";
-  static constexpr const char *kAttributeTitle = "title";
   static constexpr const char *kAttributeClass = "class";
-  static constexpr const char *kAttributeSrc = "src";
-  static constexpr const char *kAttrinuteAlign = "align";
 
   static constexpr const char *kTagAnchor = "a";
-  static constexpr const char *kTagBreak = "br";
   static constexpr const char *kTagCode = "code";
-  static constexpr const char *kTagDiv = "div";
-  static constexpr const char *kTagHead = "head";
-  static constexpr const char *kTagLink = "link";
-  static constexpr const char *kTagListItem = "li";
-  static constexpr const char *kTagMeta = "meta";
-  static constexpr const char *kTagNav = "nav";
-  static constexpr const char *kTagNoScript = "noscript";
-  static constexpr const char *kTagOption = "option";
-  static constexpr const char *kTagOrderedList = "ol";
   static constexpr const char *kTagParagraph = "p";
-  static constexpr const char *kTagPre = "pre";
-  static constexpr const char *kTagScript = "script";
-  static constexpr const char *kTagSpan = "span";
-  static constexpr const char *kTagStyle = "style";
-  static constexpr const char *kTagTemplate = "template";
-  static constexpr const char *kTagTitle = "title";
-  static constexpr const char *kTagUnorderedList = "ul";
-  static constexpr const char *kTagImg = "img";
-  static constexpr const char *kTagSeperator = "hr";
-
-  // Text format
-  static constexpr const char *kTagBold = "b";
-  static constexpr const char *kTagStrong = "strong";
-  static constexpr const char *kTagItalic = "em";
+  static constexpr const char *kTagPre = "pre"; // Used for codeblocks
   static constexpr const char *kTagItalic2 = "i";
-  static constexpr const char *kTagCitation = "cite";
-  static constexpr const char *kTagDefinition = "dfn";
-  static constexpr const char *kTagUnderline = "u";
-  static constexpr const char *kTagStrighthrought = "del";
-  static constexpr const char *kTagStrighthrought2 = "s";
-
-  static constexpr const char *kTagBlockquote = "blockquote";
-
-  // Header
-  static constexpr const char *kTagHeader1 = "h1";
-  static constexpr const char *kTagHeader2 = "h2";
-  static constexpr const char *kTagHeader3 = "h3";
-  static constexpr const char *kTagHeader4 = "h4";
-  static constexpr const char *kTagHeader5 = "h5";
-  static constexpr const char *kTagHeader6 = "h6";
 
   size_t index_ch_in_html_ = 0;
 
   bool is_closing_tag_ = false;
   bool is_in_attribute_value_ = false;
   bool is_in_code_ = false;
-  bool is_in_list_ = false;
   bool is_in_p_ = false;
   bool is_in_pre_ = false;
   bool is_in_tag_ = false;
   bool is_self_closing_tag_ = false;
-
-  // relevant for <li> only, false = is in unordered list
-  bool is_in_ordered_list_ = false;
-  uint8_t index_ol = 0;
-
-  // number of lists
-  uint8_t index_li = 0;
-
-  uint8_t index_blockquote = 0;
 
   char prev_ch_in_md_ = 0, prev_prev_ch_in_md_ = 0;
   char prev_ch_in_html_ = 'x';
@@ -347,77 +303,7 @@ private:
     std::string current_title_;
   };
 
-  struct TagBold : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
   struct TagItalic : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagUnderline : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagStrikethrought : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagBreak : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagDiv : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagHeader1 : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagHeader2 : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagHeader3 : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagHeader4 : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagHeader5 : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagHeader6 : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagListItem : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagOption : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagOrderedList : Tag {
     void OnHasLeftOpeningTag(Converter *c) override;
     void OnHasLeftClosingTag(Converter *c) override;
   };
@@ -433,36 +319,6 @@ private:
   };
 
   struct TagCode : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagSpan : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagTitle : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagUnorderedList : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagImage : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagSeperator : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override;
-    void OnHasLeftClosingTag(Converter *c) override;
-  };
-
-  struct TagBlockquote : Tag {
     void OnHasLeftOpeningTag(Converter *c) override;
     void OnHasLeftClosingTag(Converter *c) override;
   };
@@ -488,10 +344,6 @@ private:
 
   std::string ExtractAttributeFromTagLeftOf(const std::string &attr);
 
-  void TurnLineIntoHeader1();
-
-  void TurnLineIntoHeader2();
-
   // Current char: '<'
   void OnHasEnteredTag();
 
@@ -507,16 +359,6 @@ private:
 
   // Current char: '>'
   bool OnHasLeftTag();
-
-  inline static bool TagContainsAttributesToHide(std::string *tag) {
-    using std::string;
-
-    return (*tag).find(" aria=\"hidden\"") != string::npos ||
-           (*tag).find("display:none") != string::npos ||
-           (*tag).find("visibility:hidden") != string::npos ||
-           (*tag).find("opacity:0") != string::npos ||
-           (*tag).find("Details-content--hidden-not-important") != string::npos;
-  }
 
   Converter *ShortenMarkdown(size_t chars = 1);
   inline bool shortIfPrevCh(char prev) {
@@ -537,8 +379,7 @@ private:
   bool ReplacePreviousSpaceInLineByNewline();
 
   static inline bool IsIgnoredTag(const std::string &tag) {
-    return (tag[0] == '-' || kTagTemplate == tag || kTagStyle == tag ||
-            kTagScript == tag || kTagNoScript == tag || kTagNav == tag);
+    return (tag[0] == '-');
 
     // meta: not ignored to tolerate if closing is omitted
   }
@@ -559,12 +400,6 @@ inline std::string Convert(std::string &html, bool *ok = nullptr) {
     *ok = c.ok();
   return md;
 }
-
-#ifndef PYTHON_BINDINGS
-inline std::string Convert(std::string &&html, bool *ok = nullptr) {
-  return Convert(html, ok);
-}
-#endif
 
 } // namespace html2md
 
