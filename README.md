@@ -38,7 +38,7 @@ html2md.Converter(&stdStr, withUnsafeMutablePointer(to: &options) { _ in
       0.0521 seconds average
     </td>
     <td>
-      0.00289 seconds average
+      0.0091 seconds average
     </td>
   </tr>
 </table>
