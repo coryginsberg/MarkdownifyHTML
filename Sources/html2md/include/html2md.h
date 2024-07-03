@@ -291,8 +291,8 @@ private:
 
   // tags that are not printed (nav, script, noscript, ...)
   struct TagIgnored : Tag {
-    void OnHasLeftOpeningTag(Converter *c) override{};
-    void OnHasLeftClosingTag(Converter *c) override{};
+    void OnHasLeftOpeningTag(Converter *c) override {};
+    void OnHasLeftClosingTag(Converter *c) override {};
   };
 
   struct TagAnchor : Tag {

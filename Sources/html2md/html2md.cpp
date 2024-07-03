@@ -4,9 +4,9 @@
 #include "html2md.h"
 
 #include <algorithm>
-#include <string>
 #include <memory>
 #include <sstream>
+#include <string>
 #include <vector>
 
 using std::make_shared;
@@ -94,7 +94,6 @@ Converter::Converter(string *html, Options *options) : html_(*html) {
   // Text formatting
   auto tagItalic = make_shared<Converter::TagItalic>();
   tags_[kTagItalic2] = tagItalic;
-
 }
 
 void Converter::CleanUpMarkdown() {
@@ -160,9 +159,7 @@ Converter *Converter::appendBlank() {
   return appendToMd(' ');
 }
 
-bool Converter::ok() const {
-  return !is_in_pre_ && !is_in_p_ && !is_in_tag_;
-}
+bool Converter::ok() const { return !is_in_pre_ && !is_in_p_ && !is_in_tag_; }
 
 void Converter::LTrim(string *s) {
   (*s).erase((*s).begin(),
@@ -561,7 +558,5 @@ void Converter::reset() {
   index_ch_in_html_ = 0;
 }
 
-bool Converter::IsInIgnoredTag() const {
-  return IsIgnoredTag(current_tag_);
-}
+bool Converter::IsInIgnoredTag() const { return IsIgnoredTag(current_tag_); }
 } // namespace html2md
