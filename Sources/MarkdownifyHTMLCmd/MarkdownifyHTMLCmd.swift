@@ -15,17 +15,17 @@ struct MarkdownifyHTMLCmd: ParsableCommand {
     help: "File to be parsed.",
     transform: URL.init(fileURLWithPath:)
   )
-  var file: URL? = nil
+  var file: URL?
   @Option(help: "Text to convert directly.")
-  var text: String? = nil
+  var text: String?
 
   mutating func run() throws {
-    if let file = file {
+    if let file {
       guard let input = try? String(contentsOf: file) else {
         throw RuntimeError("Couldn't read from '\(file)'!")
       }
       print(MarkdownifyHTML(input).text)
-    } else if let text = text { // assume text is filled out
+    } else if let text { // assume text is filled out
       print(MarkdownifyHTML(text).text)
     } else {
       print("Error: you must select either `--file` or `--text`")

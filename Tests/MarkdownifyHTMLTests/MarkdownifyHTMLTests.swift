@@ -27,12 +27,12 @@ final class MarkdownifyHTMLTests: XCTestCase {
   }
 
   func testComplexString() {
-    guard let testFile = try? String(contentsOf: testFilePath!.url) else {
-      XCTFail("Failed to load test file: \(testFilePath!.name)")
+    guard let url = testFilePath?.url, let testFile = try? String(contentsOf: url) else {
+      XCTFail("Failed to load test file: \(testFilePath?.name ?? "")")
       return
     }
-    guard let solutionFile = try? String(contentsOf: solutionFile!.url) else {
-      XCTFail("Failed to load solution file: \(solutionFile!.name)")
+    guard let url = solutionFile?.url, let solutionFile = try? String(contentsOf: url) else {
+      XCTFail("Failed to load solution file: \(solutionFile?.name ?? "")")
       return
     }
     let conversion = MarkdownifyHTML(testFile)
@@ -41,13 +41,13 @@ final class MarkdownifyHTMLTests: XCTestCase {
   }
 
   func testAttributedConversionPerf() throws {
-    guard let testFile = try? String(contentsOf: testFilePath!.url) else {
-      XCTFail("Failed to load test file: \(testFilePath!.name)")
+    guard let url = testFilePath?.url, let testFile = try? String(contentsOf: url) else {
+      XCTFail("Failed to load test file: \(testFilePath?.name ?? "")")
       return
     }
 
     measure {
-      guard let _ = try? MarkdownifyHTML(testFile).attributedText else {
+      guard (try? MarkdownifyHTML(testFile).attributedText) != nil else {
         XCTFail("Failed to render")
         return
       }
@@ -76,7 +76,8 @@ struct Resource {
     //      - <test case files>
     let testCaseURL = URL(fileURLWithPath: "\(sourceFile)", isDirectory: false)
     let testsFolderURL = testCaseURL.deletingLastPathComponent()
-    let resourcesFolderURL = testsFolderURL.deletingLastPathComponent().appendingPathComponent("Resources", isDirectory: true)
+    let resourcesFolderURL = testsFolderURL.deletingLastPathComponent().appendingPathComponent("Resources",
+                                                                                               isDirectory: true)
     self.url = resourcesFolderURL.appendingPathComponent("\(name).\(type)", isDirectory: false)
   }
 }
